@@ -7,21 +7,34 @@
 ![Framework](https://img.shields.io/badge/Framework-Streamlit-red)
 ![API](https://img.shields.io/badge/API-GNews-yellow)
 ![Deployment](https://img.shields.io/badge/Deployment-Streamlit%20Cloud-brightgreen)
-![Status](https://img.shields.io/badge/Status-Completed-success)
-
-An AI-powered web application that detects whether a news article is **Real or Fake** using Machine Learning.
+![Status](https://img.shields.io/badge/Status-Live-success)
 
 ---
 
-## 🚀 Project Overview
+## 🚀 Live Demo
 
-This project uses **Natural Language Processing (NLP)** and **Machine Learning** to classify news content.  
-Users can:
+👉 https://fake-news-detector-ujjawal.streamlit.app
 
-- Paste news text  
-- Provide a news article URL  
-- Get prediction with confidence score  
-- View trending real-time news  
+---
+
+## 📌 Problem Statement
+
+In today’s digital world, misinformation spreads rapidly through social media and online platforms.  
+It becomes difficult for users to verify whether a news article is genuine or fake.
+
+👉 This project aims to **automatically detect fake news using Machine Learning and NLP techniques.**
+
+---
+
+## 💡 Solution
+
+We built an **AI-powered web application** that:
+
+- Analyzes news text  
+- Extracts content from URLs  
+- Classifies news as **Real or Fake**  
+- Provides a confidence score  
+- Shows trending real-world news  
 
 ---
 
@@ -29,21 +42,31 @@ Users can:
 
 - 📝 Text-based fake news detection  
 - 🌐 URL-based article analysis  
-- 📊 Confidence score visualization  
-- 🔍 Article preview (for URL input)  
-- 🔥 Live trending news (via API)  
-- 🎨 Clean and modern UI (Streamlit)
+- 📊 Confidence score with progress bar  
+- 🔍 Article preview for better understanding  
+- 🔥 Live trending news using GNews API  
+- 🎨 Interactive and modern UI (Streamlit)
 
 ---
 
 ## 🧠 Tech Stack
 
-- Frontend: Streamlit  
-- Backend: Python  
-- ML Model: Logistic Regression  
-- Vectorization: TF-IDF  
+### 🔹 Programming
+- Python  
 
-### Libraries Used:
+### 🔹 Machine Learning
+- Logistic Regression  
+
+### 🔹 NLP
+- TF-IDF Vectorization  
+
+### 🔹 Frontend
+- Streamlit  
+
+### 🔹 APIs
+- GNews API (for trending news)
+
+### 🔹 Libraries Used
 - scikit-learn  
 - pandas  
 - numpy  
@@ -58,62 +81,105 @@ Users can:
 fake_news_project/
 │
 ├── app/
-│   └── app.py
+│   └── app.py              # Streamlit application
 │
 ├── data/
-│   ├── Fake.csv
-│   └── True.csv
+│   ├── Fake.csv           # Fake news dataset
+│   └── True.csv           # Real news dataset
 │
 ├── model/
-│   ├── model.pkl
-│   └── vectorizer.pkl
+│   ├── model.pkl          # Trained ML model
+│   └── vectorizer.pkl     # TF-IDF vectorizer
 │
-├── main.py
-├── requirements.txt
-└── README.md
+├── main.py                # Model training script
+├── requirements.txt       # Dependencies
+└── README.md              # Documentation
 ```
 
 ---
 
-## ⚙️ How It Works
+## ⚙️ How It Works (Step-by-Step)
 
-### 1. Data Processing
-- Combined Fake.csv and True.csv  
-- Cleaned text using regex  
-- Removed special characters  
+### 1️⃣ Data Collection
+- Used two datasets:
+  - Fake News  
+  - Real News  
 
-### 2. Feature Extraction
-- Used TF-IDF Vectorizer  
-- Converted text into numerical format  
+---
 
-### 3. Model Training
-- Algorithm: Logistic Regression  
-- Split data into train/test  
-- Achieved ~99% accuracy  
+### 2️⃣ Data Preprocessing
+- Converted text to lowercase  
+- Removed special characters using regex  
+- Cleaned noise and unwanted symbols  
 
-### 4. Prediction
-- Input → Clean → Vectorize → Predict  
-- Output:
-  - Real / Fake  
-  - Confidence score  
+---
+
+### 3️⃣ Feature Engineering
+- Applied **TF-IDF Vectorizer**
+- Converted text into numerical vectors  
+
+---
+
+### 4️⃣ Model Training
+- Used **Logistic Regression**
+- Split dataset into training and testing  
+- Achieved high accuracy (~99%)  
+
+---
+
+### 5️⃣ Prediction Pipeline
+User input → Clean text → Transform (TF-IDF) → Model prediction  
+
+Output:
+- Real / Fake  
+- Confidence score  
 
 ---
 
 ## 🌐 URL Processing
 
-- Uses `newspaper3k`  
+- Uses `newspaper3k` library  
 - Extracts full article text automatically  
+- Applies same ML pipeline for prediction  
 
 ---
 
-## 🔥 Trending News
+## 🔥 Trending News Feature
 
-- Uses GNews API  
-- Fetches live headlines  
+- Integrated with **GNews API**
+- Fetches real-time headlines  
 - Displays:
   - Title  
   - Source  
   - Link  
+
+---
+
+## 📊 Model Performance
+
+- Accuracy: ~99%  
+- Precision: High  
+- Recall: High  
+
+👉 Note: High accuracy is due to dataset characteristics.
+
+---
+
+## ⚠️ Limitations
+
+- Model trained on specific dataset → may not generalize fully  
+- Cannot verify factual correctness (pattern-based prediction)  
+- Sensitive to writing style differences  
+
+---
+
+## 🚀 Future Improvements
+
+- Use BERT / Transformers for better understanding  
+- Add explainability (why prediction is fake/real)  
+- Improve UI with dashboard design  
+- Add multilingual support  
+- Store prediction history  
 
 ---
 
@@ -139,57 +205,23 @@ streamlit run app/app.py
 
 ## ☁️ Deployment
 
-You can deploy this project on:
-
-- Streamlit Community Cloud (Recommended)  
-- Render  
-- Hugging Face Spaces  
-- GCP  
-
----
-
-## 🔐 API Configuration
-
-1. Get API key from: https://gnews.io/  
-2. Add in code:
-```
-api_key = "YOUR_API_KEY"
-```
-
----
-
-## 📊 Sample Output
-
-- ✅ Real News (92.45%)  
-- ❌ Fake News (87.12%)  
-
----
-
-## ⚠️ Limitations
-
-- Model trained on limited dataset  
-- May not generalize perfectly  
-- Uses TF-IDF (no deep understanding of context)  
-
----
-
-## 🚀 Future Improvements
-
-- Use BERT / Transformers  
-- Add explanation for predictions  
-- Improve UI  
-- Add multilingual support  
-- Store prediction history  
+Deployed using **Streamlit Community Cloud**
 
 ---
 
 ## 👨‍💻 Author
 
-Ujjawal Shrivastava  
+**Ujjawal Shrivastava**  
 Aspiring Data Scientist  
 
 ---
 
 ## ⭐ Conclusion
 
-This project demonstrates how Machine Learning and NLP can be used to detect fake news and combat misinformation.
+This project demonstrates how **Machine Learning + NLP** can be applied to solve real-world problems like fake news detection.
+
+It showcases:
+- End-to-end ML pipeline  
+- Real-time API integration  
+- Interactive UI development  
+- Cloud deployment  
