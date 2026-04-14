@@ -225,3 +225,12 @@ It showcases:
 - Real-time API integration  
 - Interactive UI development  
 - Cloud deployment  
+
+---
+## Screenshots
+
+<img width="957" height="731" alt="image" src="https://github.com/user-attachments/assets/2dc2eff0-0aa0-495d-8f40-956c7cd9f4bc" />
+<img width="944" height="578" alt="image" src="https://github.com/user-attachments/assets/e24c36e6-b1aa-4902-a0ce-62fd109bfef3" />
+<img width="950" height="872" alt="image" src="https://github.com/user-attachments/assets/1a23916f-c607-404d-972c-8657d4514010" />
+
+
