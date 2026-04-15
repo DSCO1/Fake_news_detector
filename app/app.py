@@ -34,7 +34,7 @@ def get_article_text(url):
     return article.text
 
 def get_trending_news():
-    api_key = "4d810d8fca84fc6be464eb8eb8955fc2"
+    api_key = "f2927f68e4202fedd000f77203c204e0"
 
     url = f"https://gnews.io/api/v4/top-headlines?lang=en&country=in&max=5&token={api_key}"
 
